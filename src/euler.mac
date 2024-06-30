@@ -1,0 +1,21 @@
+defstruct(graph(V, E))$
+
+path(G, P):= block(
+ [result: true],
+ for i: 2 step 2 thru (length(P)-1) do (
+   result: result and is({P[i-1], P[i+1]} = assoc(P[i], G@E))
+ ),
+ return(result)
+)$
+
+euler_path(G, P):= (
+ is(path(G, P)) and is(length(P) = 2*length(G@E) + 1)
+)$
+
+eulersberg: new(graph({A,B,C,D,E,F}, {[a,{E,F}], [b,{B,F}], [c,{B,F}], [d,{A,F}], [e,{A,F}], [f,{C,F}], [g,{A,C}], [h,{A,C}], [i,{C,D}], [k,{A,D}], [l,{D,E}], [m,{A,E}], [n,{A,E}], [o,{B,E}], [p,{A,B}]}))$
+
+s: "EaFbBcFdAeFfCgAhCiDkAmEnApBoElD"$
+
+journey: map(eval_string, charlist(s))$
+
+euler_path(eulersberg, journey);
