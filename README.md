@@ -1,3 +1,5 @@
+[![Makefile CI](https://github.com/MHenderson/euler-paths/actions/workflows/makefile.yml/badge.svg)](https://github.com/MHenderson/euler-paths/actions/workflows/makefile.yml)
+
 # euler-paths
 
 Find Euler paths with Maxima.
