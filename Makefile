@@ -5,4 +5,4 @@ install:
 	sudo apt-get -y install maxima maxima-share --no-install-suggests --no-install-recommends
 
 run:
-	maxima --very-quiet --batch=src/euler.mac
+	cd src; maxima --very-quiet --batch=eulersberg.mac

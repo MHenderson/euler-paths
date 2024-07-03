@@ -1,0 +1,2 @@
+setup_autoload ("euler.mac", path, euler_path);
+showtime:all;
